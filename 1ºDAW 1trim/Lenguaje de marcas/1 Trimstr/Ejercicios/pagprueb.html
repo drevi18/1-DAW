@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Header, Main y Footer</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid black;
+    }
+
+    header{
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #c4c0c0;
+    }
+
+    header>h1{
+        width: 80%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header>img{
+        margin-left: 3px;
+        height: 10vh;
+        width: 9%;
+        display: flex;
+    }
+
+    .navigation{
+        height: 5vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navigation>a{
+        height: 3vh;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(215, 215, 215);
+        
+    }
+
+    .navigation>a:hover{
+        color: rgb(0, 0, 0);
+        background-color: grey ;
+    }
+
+    main{
+        height: 75vh;
+        width: 100%;
+        background-image: url(fotos/fondomc.png) ;
+        background-repeat: no-repeat;
+        background-size:cover ;
+        background-position:center ; 
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .box1, .box2{
+        margin-left: 30px;
+        margin-top: 31px;
+        height: 30vh;
+        width: 60%;
+        background-color: #88724d;       
+        display: flex;
+    }
+
+    .box3{
+        margin-top: 30px;
+        height: 65vh;
+        width: 20%;
+        background-color: #88724d; 
+    }
+
+    footer{
+        height: 10vh;
+        width: 100%;
+        background-color: #c4c0c0; 
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+    }
+   
+    @media screen and (max-width:960px) {
+        *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid black;
+    }
+
+    header{
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #c4c0c0;
+    }
+
+    header>h1{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header>img{
+        display: none;
+    }
+
+    .navigation{
+        height: 5vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navigation>a{
+        height: 3vh;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(215, 215, 215);
+        
+    }
+
+    .navigation>a:hover{
+        color: rgb(0, 0, 0);
+        background-color: grey ;
+    }
+
+    main{
+        height: 75vh;
+        width: 100%;
+        background-image: url(fondomc.png) ;
+        background-repeat: no-repeat;
+        background-size:cover ;
+        background-position:center ; 
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .box1, .box2{
+        margin-left: 30px;
+        margin-top: 31px;
+        height: 30vh;
+        width: 60%;
+        background-color: #88724d;       
+        display: flex;
+    }
+
+    .box3{
+        margin-top: 30px;
+        height: 65vh;
+        width: 20%;
+        background-color: #88724d; 
+    }
+
+    footer{
+        height: 10vh;
+        width: 100%;
+        background-color: #c4c0c0; 
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+    }
+    }
+    
+
+</style>
+<body>
+    <header id="main-header">
+        <img src="logo1.png" alt="Logo 1" class="header-logo">
+        <h1 class="header-title">Título de la Página</h1>
+        <img src="logo2.png" alt="Logo 2" class="header-logo">
+        <nav class="navigation">
+            <a href="pagina1.html" class="nav-link">Página 1</a>
+            <a href="pagina2.html" class="nav-link">Página 2</a>
+            <a href="pagina3.html" class="nav-link">Página 3</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="box1">Caja 1</div>
+        <div class="box2">Caja 2</div>
+        <div class="box3">Caja 3</div>
+    </main>
+
+    <footer id="main-footer">
+        <p>© 2025 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

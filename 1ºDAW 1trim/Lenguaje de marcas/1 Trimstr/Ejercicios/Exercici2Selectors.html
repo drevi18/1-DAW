@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Exercici de selectors</title>
+        <link type="text/css" rel="stylesheet" href="css/EstilsExercici2.css"/>
+
+    </head>
+    <style>
+        h1{
+            color: rgb(30, 163, 119);
+        }
+        strong{
+            color: rgb(211, 43, 43);
+        }
+        body>h2{
+            color: blue;
+        }
+
+        .destacat{
+            color: rgb(182, 182, 32);
+        }
+
+        a{
+            color: red;
+        }
+
+        em{
+            color: blue;
+        }
+
+        span{
+            color: purple;
+        }
+
+        caption{
+            color: blue;
+        }
+
+        .especial{
+            color: rgb(173, 173, 47);
+        }
+
+        tfoot{
+            color: red;
+        }
+
+        tbody th{
+            color: red;
+        }
+
+        table,td,th{
+            border:1px solid #000; border-collapse:collapse; padding:5px
+        }
+
+        tbody,th,em{
+            color: rgb(17, 92, 17);
+        }
+
+        tbody strong{
+            color: rgb(161, 161, 55) ;
+        }
+
+        #adicional,span{
+            color: green;
+        }
+
+        #especial{
+            color: blueviolet;
+        }
+
+
+
+
+    </style>
+
+    <body>
+        <h1 id="titol">Lorem ipsum dolor sit amet</h1>
+
+        <p>Nulla pretium. Sed tempus nunc vitae neque. <strong>Suspendisse gravida</strong>, metus a scelerisque sollicitudin, lacus velit 
+            ultricies nisl, nonummy tempus neque diam quis felis. <span class="destacat">Etiam sagittis tortor</span> sed arcu sagittis tristique.</p>
+
+        <h2 id="subtitol">Aliquam tincidunt, sem eget volutpat porta</h2>
+
+        <p>Vivamus velit dui, placerat vel, feugiat in, ornare et, urna.  <a href="#">Aenean turpis metus, <em>aliquam non</em>, tristique in</a>, pretium varius, sapien. Proin vitae nisi.  Suspendisse <span class="especial">porttitor purus ac elit</span>. Suspendisse eleifend odio at dui. In in elit sed metus pretium elementum.</p>
+
+
+
+
+
+
+
+        <table>
+            <caption>
+                Títol de la taula
+            </caption>
+            <thead >
+                <tr >
+                    <th scope="col"></th>
+                    <th scope="col" class="especial">Títol columna 1</th>
+                    <th scope="col" class="especial">Títol columna 2</th>
+                </tr>
+            </thead>
+
+            
+
+            <tbody>
+                <tr>
+                    <th scope="row" class="especial">Títol fila 1</th>
+                    <td>Donec purus ipsum</td>
+                    <td>Curabitur <em>blandit</em></td>
+                </tr>
+                <tr>
+                    <th scope="row">Títol fila 2</th>
+                    <td>Donec <strong>purus ipsum</strong></td>
+                    <td>Curabitur blandit</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Títol columna 1</th>
+                    <th scope="col">Títol columna 2</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div id="adicional">
+            <p>Donec purus ipsum, posuere id, venenatis at, <span>placerat ac, lorem</span>. Curabitur blandit, eros sed gravida aliquet, risus justo 
+                porta lorem, ut mollis lectus tortor in orci. Pellentesque nec augue.</p>
+
+            <p>Fusce nec felis eu diam pretium adipiscing. <span id="especial">Nunc elit elit, vehicula vulputate</span>, venenatis in, 
+                posuere id, lorem. Etiam sagittis, tellus in ultrices accumsan, diam nisi feugiat ante, eu congue magna mi non nisl.</p>
+
+            <p>Vivamus ultrices aliquet augue. <a href="#">Donec arcu pede, pretium vitae</a>, rutrum aliquet, tincidunt blandit, pede. 
+                Aliquam in nisi. Suspendisse volutpat. Nulla facilisi. Ut ullamcorper nisi quis mi.</p>
+        </div>
+    </body>
+</html>

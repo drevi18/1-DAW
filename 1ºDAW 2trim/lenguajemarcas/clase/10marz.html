@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let n2 = Math.floor(Math.random() * 11); // Número aleatorio entre 0 y 10
+        let n1;
+    
+        do {
+            n1 = parseInt(prompt("Adivina el número entre 0 y 10"));
+            if (n1 !== n2) {
+                document.write("<h1>Incorrecto, sigue intentándolo</h1>");
+            }
+        } while (n1 !== n2);
+    
+        document.write("<h1>¡Enhorabuena! Lo has acertado</h1>");
+
+
+    </script>
+    
+</head>
+<body>
+    <div class="container-fluid "></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        #contenedor{
+            height: 300px;
+            width: 100%;
+            background-color: aqua;
+
+            display: flex;
+            justify-content: space-around;
+        /* align-items: center;
+            flex-wrap: wrap; */
+        }
+
+        #contenedor>div{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            /* Estos 3 sirven para maquetar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor"> <div id="contenedor">
+        <div>ASIR</div>
+        <div>DAW</div>
+        <div>SMR</div>
+    </div>
+    </div>    
+</body>
+</html>

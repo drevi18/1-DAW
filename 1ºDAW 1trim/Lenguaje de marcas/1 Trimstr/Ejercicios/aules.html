@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generalitat Valenciana - Aules</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        border: solid 1px black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header{
+        height: 15vh;
+        width: 100%;
+        background-color: rgb(234, 233, 233);
+        display: flex;
+    }
+
+    .logo{
+        height: 15vh;
+        width: 20%;
+        display: flex;
+        justify-content: start;
+    }
+
+    .search{
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+    }
+
+    .actions{
+        height: 10vh;
+        width: 25%;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+
+    main{
+        margin-left: 70px;
+        margin-right: 70px;
+        margin-top: 40px;
+        height: 75vh;
+    }
+    
+    .greeting{
+        height: 10vh;
+        width: 100%;
+        align-content:space-around;
+    }
+
+    .filters{
+        height: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+
+    .main-content{
+        height: 62vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .course-card{
+        height: 25vh;
+        width: 30%;
+    }
+
+    /* .course-card:nth-child(1) {
+    Estilos aplicados al primer div con clase course-card
+    background-color: #ffeb3b;
+    } */
+
+    .course-card>h3{
+        height: 15vh;
+        display: flex;
+        align-items: flex-end;
+    }
+
+</style>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Generalitat Valenciana">
+            <h1>Generalitat Valenciana</h1>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Buscar...">
+        </div>
+        <div class="actions">
+            <button>Val / Cas / Eng / Fra</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="greeting">
+            <h2>Hola, SARA! 👋</h2>
+            <p>Resum dels cursos</p>
+        </div>
+
+        <div class="filters">
+            <button>Tots</button>
+            <input type="text" placeholder="Busca...">
+            <button>Ordena per nom del curs</button>
+            <button>Targeta</button>
+        </div>
+
+        <div class="main-content">
+            <div class="course-card">
+                <h3>DAW1 Sistemas informáticos</h3>
+                <p>24/25</p>
+            </div>
+            <div class="course-card">
+                <h3>Bases de Dades</h3>
+                <p>1CFSBLFP 24/25</p>
+            </div>
+            <div class="course-card">
+                <h3>Entorns de desenvolupament</h3>
+                <p>1CFSBLFP 24/25</p>
+            </div>
+            <div class="course-card">
+                <h3>FOL</h3>
+                <p>24/25</p>
+            </div>
+            <div class="course-card">
+                <h3>Linux essential</h3>
+                <p>curso solicitado</p>
+            </div>
+            <div class="course-card">
+                <h3>Lenguaje de marcas</h3>
+                <p>1CFSBLFP 24/25</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

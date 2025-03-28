@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        div{
+        background-color: rgb(141, 21, 21);
+        height: 100px;
+        width: 100px;
+        margin-bottom: 30px;
+        margin-left: 30px;
+        color: white;
+        }
+        
+        #relativa{
+            position: relative;
+            background-color: blue;
+            top: 100px;
+            left: 100px;;
+            
+        }
+    </style>
+
+<script>
+        window.onload = function () {
+
+            let caja=document.getElementById("relativa");
+
+            document.addEventListener('mousemove',mover);
+
+            function mover(e){
+
+                caja.style.top=e.clientY+"px";
+                caja.style.left=e.clientX+"px";
+                
+            }
+
+        }
+    </script>
+
+    
+</head>
+
+<body>
+
+    <h2>posición relativa deja la posición vacia</h2>
+    <div>caja1</div>
+    <div id="relativa">caja2 relativa</div>
+    <div>caja3</div>
+    <div>caja4</div>
+    <div>caja5</div>
+
+
+
+
+</body>
+
+</html>

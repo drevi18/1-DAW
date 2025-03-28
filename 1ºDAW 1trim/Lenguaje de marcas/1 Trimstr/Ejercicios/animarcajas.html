@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones</title>
+    <style>
+        .container{
+            height: 100vh;
+            width: 100%;
+            border:1px black solid ;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+
+        }
+
+        .container>div{
+            height: 150px;
+            width: 150px;
+            border:1px black solid ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+          
+
+        }
+
+        #mover{
+            background-color: red;
+        
+
+        }
+
+        #mover:hover{
+            background-color: red;
+            position: relative;
+            animation-name: mover;
+            animation-duration: 0.4s
+
+        }
+        
+        @keyframes mover{
+            0%{
+                left: 0px;
+
+            }
+
+            25%{
+                left: 5px;
+            }
+
+            50%{
+                left: -10px;
+            }
+
+            75%{
+                left: 5px;
+            }
+
+            100%{
+                left: 0px;
+            }
+        }
+
+        #rotar{
+            background-color: blue;
+          
+        }
+
+        #rotar:hover{
+            background-color: blue;
+            animation: rotar;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes rotar{
+            0%{
+                transform: rotate(0);
+                
+            }
+            
+            25%{
+                transform: rotate(5deg);
+            }
+            
+            50%{
+                transform: rotate(-10deg);
+            }
+            
+            75%{
+                transform: rotate(5deg);
+            }
+            
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+
+        #escalar{
+          background-color: aquamarine;
+      }
+
+        #escalar:hover{
+            background-color: aquamarine;
+            animation: escalar;
+            animation-duration: 2s;
+        }
+        /* @keyframes escalar{
+            0%{
+                transform: scale(0,0);                
+            }
+            
+            25%{
+                transform: scale(2,2); 
+            }
+            
+            50%{
+                transform: scale(0,0); 
+            }
+            
+            75%{
+                transform: scale(2,2); 
+            }
+            
+            100%{
+                transform: scale(0,0); 
+            }
+        } */
+
+        #sesgar{
+            background-color: orange;
+        }
+
+        #sesgar:hover{
+            animation: sesgar;
+            animation-duration: 2s;
+        }
+
+        @keyframes sesgar{
+            0%{
+                transform: skew(0,0);                
+            }
+            
+            25%{
+                transform: skew(20,20); 
+            }
+            
+            50%{
+                transform: skew(-20,-20); 
+            }
+            
+            75%{
+                transform: skew(20,20); 
+            }
+            
+            100%{
+                transform: skew(0,0); 
+            }
+        }
+
+        #border{
+            background-color: grey;
+        }
+
+        #border:hover{
+            animation: border;
+            animation-duration: 2s;
+        }
+
+        @keyframes border{
+            0%{
+                border-radius: 0%;
+            }
+
+            25%{
+                border-radius: 15px;
+            }
+
+            50%{
+                left: 30px;
+            }
+
+            75%{
+                left: 15px;
+            }
+
+            100%{
+                left: 0px;
+            }
+        }
+
+        #iluminar{
+            background-color: rgb(146, 62, 146);
+        }
+
+        #iluminar:hover{
+            animation: iluminar;
+            animation-duration: 2s;
+        }
+
+        @keyframes iluminar{
+            0%{
+                background-color: rgb(180, 69, 180);
+
+            }
+
+            25%{
+                background-color: rgba(231, 109, 231);
+            }
+
+            50%{
+                background-color: rgba(231, 109, 231,);
+            }
+
+            75%{
+                background-color: rgba(231, 109, 231);
+            }
+
+            100%{
+                background-color: rgba(180, 69, 180);
+            }
+        }
+
+        #opacidad{
+            background-color: rgb(101, 198, 236);
+        }
+
+        #opacidad:hover{
+            animation: opacidad;
+            animation: 2s;
+        }
+        @keyframes opacidad{
+            0%{
+                background-color: rgba(101, 198, 236,1);
+            }
+
+            25%{
+                background-color: rgba(101, 198, 236,0.5);
+            }
+
+            50%{
+                background-color: rgba(101, 198, 236,0);
+            }
+
+            75%{
+                background-color: rgba(101, 198, 236,0.5);
+            }
+
+            100%{
+                background-color: rgba(101, 198, 236,1);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+ <div class="container">
+            <div id="mover">mover</div>
+            <div id="rotar">rotar</div>
+            <div id="escalar">escalar</div>
+            <div id="sesgar">sesgar</div>
+            <div id="border">border</div>
+            <div id="iluminar">iluminar</div>
+            <div id="opacidad">opacidad</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

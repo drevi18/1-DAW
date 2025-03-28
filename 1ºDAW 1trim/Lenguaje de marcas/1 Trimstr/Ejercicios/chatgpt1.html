@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Página Básica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+    *{
+        padding: 0px;
+        margin: 0px;
+        border: solid 1px black;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header{
+        height: 15vh;
+        width: 100%;
+        background-color: rgb(194, 144, 194);
+        color: white;
+    }
+    #titulo{
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navegacion ul{
+        height: 5vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    
+
+    .navegacion a:hover{
+        color: rgb(167, 228, 54);
+    }
+
+    main{
+        height: 80vh;
+        width: 100%;
+        background-color: rgb(211, 207, 207);
+    }
+
+    #inicio{
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenido{
+        height: 75vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        transition: all 0.5s linear 0.3s;
+    }
+
+    #sobre-mi{
+        height: 50vh;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(153, 100, 100);
+        
+    }
+
+    #sobre-mi:hover{
+        box-shadow: 10px 10px rgb(90, 68, 68);
+    }
+
+    #contacto{
+        height: 50vh;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(100, 153, 131);
+        
+    }
+
+    #contacto:hover{
+        box-shadow: 10px 10px black;
+    }
+
+    footer{
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(202, 148, 202);
+        color: white;
+    }
+
+
+
+</style>
+<body>
+    <header class="header">
+        <h1 id="titulo">Mi Página Web</h1>
+        <nav class="navegacion">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>Bienvenido a mi página web. Aquí encontrarás información interesante.</p>
+        </section>
+        <section id="sobre-mi">
+            <div>Sobre mí</div>
+        </section>
+        <section id="contacto">
+            <div>Contacto</div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

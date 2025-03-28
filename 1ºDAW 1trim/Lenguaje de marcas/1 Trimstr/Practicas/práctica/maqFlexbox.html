@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetación Flexbox</title>
+    <style>
+        *{
+        margin: 0px;
+        padding: 0px;
+        font-size: Arial, sans-serif;
+        background-size: cover;
+        box-sizing: border-box;
+        border: 1px solid black;
+      }
+
+      header{
+        height: 100%;
+        width: 100%;
+        background-color: rgb(124, 124, 221);
+        color: white;
+        text-align: center;
+      }
+        
+        main{
+            display: flex;
+        }
+
+        aside{
+            height: 500px;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(111, 160, 111);
+            color: white;   
+        }
+
+        section{
+            display: flex;
+            height: 500px;
+            width: 70%;
+            background-color: rgb(105, 163, 163);
+            color: white;
+        }
+
+        article:nth-of-type(1){
+            display: flex;
+            background-color: yellow;
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Titulo</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <p>Contenido del artículo 1.</p>
+            </article>
+            <article>
+                <p>Contenido del artículo 2.</p>
+            </article>
+            <article>
+                <p>Contenido extenso que debe manejar el overflow.</p>
+            </article>
+        </section>
+        <aside>
+            aside
+        </aside>
+    </main>
+    <footer>Sara Gómez Torres</footer>
+</body>
+</html>

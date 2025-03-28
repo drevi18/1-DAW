@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    a:link{
+        color: yellow;
+    }
+
+    /* Cambia al pasr por encima */
+    a:hover{
+        color: red;
+    }
+
+    /* Cambia al clicar */
+    a:active{
+        color: aqua;
+    }
+
+    a:visited{
+        color: brown;
+    }
+
+    /* No modifica el código y sirve para añadir texto, imágenes... */
+    h6::before{
+        content: "Hola "; 
+    }
+
+    p::first-letter{
+        font-size: 20px;
+        color: aqua;
+    }
+
+    p::first-line{
+        color: red;
+    }
+</style>
+</head>
+<body>
+    
+    <h6>TITULO</h6>
+
+    <a href="http://www.marca.com">marca</a>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quasi neque aliquid mollitia tenetur consequuntur laudantium, iusto ducimus totam deserunt rem sunt itaque ex! Velit quas praesentium recusandae et molestias?</p>
+
+</body>
+</html>

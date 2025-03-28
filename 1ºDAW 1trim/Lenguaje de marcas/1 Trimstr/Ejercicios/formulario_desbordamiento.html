@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Formulario_Desbordamiento</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <style>
+    input{
+      padding-bottom: 20px;
+    }
+
+    label[for="nombre"]{
+      display: block;
+
+    }
+
+    label[for="codigo"]{
+      display: block;
+
+    }
+
+    input[type="radio"]{
+      cursor: crosshair;
+      accent-color: green;
+    }
+
+    input:focus{
+      background-color: blueviolet;
+    }
+
+    div{
+      border: solid black 1px;
+      overflow: scroll;
+      height: 200px;
+      width: 200px;
+    }
+  </style>
+
+<body>
+
+  <h4>FORMULARIO</h4>
+  <form action="" method="post">
+    <label for="nombre">nombre</label>
+    <input type="text" name="nombre" />
+
+    <label for="codigo">codigo</label>
+    <input type="text" name="codigo" disabled="true" value="!Password" />
+    <br />
+    <label for="steve">Steve Rogers</label>
+    <input type="radio" name="shf" value="CA" />
+    <label for="tony">Tony Stark</label>
+    <input type="radio" name="shf" value="IM" />
+    <label for="peter">Peter Parker</label>
+    <input type="radio" name="shf" value="SM" />
+
+
+  </form>
+
+  <h4>Desbordamiento: OVERFLOW</h4>
+
+  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia natus consequatur officia id! Corrupti, pariatur debitis nihil error quod aliquid nesciunt corporis similique, iste, beatae praesentium fugiat aperiam tenetur eos! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia commodi architecto, dolorem corrupti culpa vero. Nihil iusto autem voluptatum non consequuntur fugit, corrupti exercitationem repellendus officia dolorum doloremque necessitatibus quos.</div>
+
+</body>
+
+</html>

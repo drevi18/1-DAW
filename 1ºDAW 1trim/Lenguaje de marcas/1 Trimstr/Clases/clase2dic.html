@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLEXBOX</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: opx;
+        box-sizing: border-box;
+        border: 1px solid black;
+      }
+
+      h1 {
+        height: 20vh;
+        background-color: aquamarine;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* diferencia entre justify y alig es que justify lo hace a lo largo y alig a lo alto */
+      nav > ul {
+     
+        display: flex;
+        justify-content: space-between;
+      }
+
+      nav > ul > li {
+        height: 20vh;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      main {
+        display: flex;
+      }
+
+      li:nth-of-type(even) {
+        background-color: rgb(126, 224, 126);
+      }
+      li:nth-of-type(odd) {
+        background-color: rgb(226, 143, 143);
+      }
+      main > aside {
+        background-color: rgb(155, 216, 240);
+        height: 50vh;
+        width: 40%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      aside > img {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      main > section {
+        height: 60%;
+        width: 60%;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      article {
+        height: 100%;
+        background-color: rgb(108, 108, 197);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      footer {
+        height: 10vh;
+        background-color: rgb(241, 159, 91);
+      }
+
+      footer > p {
+        height: 10vh;
+        background-color: rgb(205, 238, 115);
+
+        display: flex;
+        justify-content: end;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>TITULO</h1>
+    </header>
+
+    <nav>
+    <ul><li><a href="">DAW</a></li>
+        <li><a href="">ASIR</a></li>
+        <li><a href="">SMR</a></li>
+        <li><a href="">CIBER</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <aside>
+        <img src="../Ejercicios/baraja/12.png" alt="" />
+        <img src="../Ejercicios/baraja/4.png" alt="" />
+      </aside>
+      <section>
+        <article>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+            recusandae consectetur sint dolor adipisci deleniti architecto
+            doloremque a ad fuga excepturi, est et totam soluta vel ipsam nemo
+            possimus id!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+            recusandae consectetur sint dolor adipisci deleniti architecto
+            doloremque a ad fuga excepturi, est et totam soluta vel ipsam nemo
+            possimus id!
+          </p>
+        </article>
+        <article>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+            recusandae consectetur sint dolor adipisci deleniti architecto
+            doloremque a ad fuga excepturi, est et totam soluta vel ipsam nemo
+            possimus id!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+            recusandae consectetur sint dolor adipisci deleniti architecto
+            doloremque a ad fuga excepturi, est et totam soluta vel ipsam nemo
+            possimus id!
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>Página realizada por Sara Gómez</p>
+    </footer>
+  </body>
+</html>

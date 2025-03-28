@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      
+      div{
+        background-color: rgb(141, 21, 21);
+        height: 100px;
+        width: 100px;
+        margin-bottom: 30px;
+        margin-left: 30px;
+        color: white;
+        }
+
+        #absoluta{
+            background-color: green;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+
+            let top = 1;
+            let left = 1;
+
+            let caja = document.getElementById("absoluta");
+
+            document.addEventListener('keypress', teclado);
+
+            function teclado(e) {
+
+                if (e.keyCode == '119') { //W
+                    top -= 1;
+
+                }
+                if (e.keyCode == '115') { //S
+                    top += 1;
+
+                }
+                if (e.keyCode == '97') { //A
+                    left -= 1;
+
+                }
+                if (e.keyCode == '100') { //D
+                    left += 1;
+
+                }
+
+                caja.style.left = left * 20 + "px";
+                caja.style.top = top * 20 + "px";
+
+
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>posición absoluta, NO deja la posición vacia</h2>
+    <div>caja1</div>
+    <div id="absoluta"> caja2 absoluta</div>
+    <div>caja3</div>
+    <div>caja4</div>
+    <div>caja5</div>
+
+
+
+
+</body>
+
+</html>

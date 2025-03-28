@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Sara Gómez">
+    <meta name="description" content="práctica de html">
+    <meta name="keywords" content="HTML, Práctica, clase, página">
+    <title>DecoraHogar</title>
+
+        <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #ABBFC4;
+        }
+
+        nav ul {
+            list-style-type: none; 
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:#ABBFC4;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none; 
+            margin-right: 10px;
+        }
+
+        .logo {
+            display: block;
+            margin: 20px auto; 
+            max-width: 200px; 
+            height: auto; 
+        }
+        .productos-destacados {
+            display: flex;
+            justify-content: space-around; 
+            margin: 20px 0;
+        }
+
+        .producto {
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center; 
+            width: 200px; 
+        }
+
+        .producto img {
+            max-width: 100%; 
+            height: auto; 
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border: 2px solid #4CAF50;
+            width: 320px;
+        }
+
+        form input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-group input {
+            width: 48%;
+        }
+        
+        </style>
+</head>
+<body>
+
+    <header>
+        <h1>DecoraHogar</h1>
+   </header>
+
+   <nav>
+    <ul>
+        <li><a href="págprincipal.html">Principal</a></li>
+        <li><a href="págmuebles.html">Muebles</a></li>
+        <li><a href="págdecoración.html">Decoración</a></li>
+        <li><a href="págcontacto.html">Contacto</a></li>
+    </ul>
+
+</nav>
+<img src="imágenes/Decor.png" alt="descripción" title="logo de la tienda" class="logo">
+<section>
+    <article>
+        Bienvenid@ a nuestra página web oficial, aquí podrás encontrar tu mueble de en sueño y esa decoración que tanto ansias. No esperes más y mira nuestros articulos.
+    </article>
+</section>
+<br>
+<h1> Productos destacados</h1>
+<div class="productos-destacados">
+    <div class="producto">
+        <img src="imágenes/mueble1.jpeg" alt="Producto 1">
+        <h2>Cajonera</h2>
+        <p>Ancho: 30cm Largo: 80cm Alto: 50cm</p>
+        <p>Precio: $45,99</p>
+    </div>
+
+    <div class="producto">
+        <img src="imágenes/mueble2.png" alt="Producto 2">
+        <h2>Armario</h2>
+        <p>Ancho: 50cm Largo: 90cm Alto: 1,40cm</p>
+        <p>Precio: $102,45</p>
+    </div>
+
+    <div class="producto">
+        <img src="imágenes/decoracion1.jpg" alt="Producto 3">
+        <h2>Jarrón</h2>
+        <p>Perfecto para decorar la sala</p>
+        <p>Precio: $15,75</p>
+    </div>
+
+    <div class="producto">
+        <img src="imágenes/decoracion2.png" alt="Producto 4">
+        <h2>Espejo</h2>
+        <p>Largo: 35cm Alto: 35cm</p>
+        <p>Precio: $20,99</p>
+    </div>
+</div>
+<br>
+<h1>Rellena el formulario</h1>
+<form action="terminarcompra.html">
+    <label for="usuario">Nombre de Usuario (obligatorio):</label>
+    <input type="text" id="usuario" name="usuario" required autofocus>
+    <br>
+    <br>
+
+    <label for="password">Contraseña (obligatorio):</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <br>
+
+    <label for="fecha-entrega">Fecha de Entrega (obligatorio):</label>
+    <input type="date" id="fecha-entrega" name="fecha-entrega" min="2024-10-01" max="2025-02-01" required>
+    <br>
+    <br>
+
+    <label for="hora-entrega">Hora de Entrega (obligatorio):</label>
+    <input type="time" id="hora-entrega" name="hora-entrega" min="09:00" max="20:00" step="1800" required>
+    <br>
+    <br>
+
+    <label for="ciudad">Ciudad de Entrega (obligatorio):</label>
+    <select id="ciudad" name="ciudad" required>
+        <option value="Madrid">Madrid</option>
+        <option value="Valencia">Valencia</option>
+        <option value="Alicante">Alicante</option>
+        <option value="Barcelona" selected>Barcelona</option>
+    </select>
+    <br>
+    <br>
+
+    <label for="email">Correo Electrónico (obligatorio):</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <br>
+
+    
+    <label for="productos">Elige los productos (obligatorio):</label>
+    <select name="productos" id="productos" required>
+        <option value="Jarrón">Jarrón</option>
+        <option value="Espejo">Espejo</option>
+        <option value="Flexo">Flexo</option>
+        <option value="Invernadero">Invernadero</option>
+        <option value="Cajonera">Cajonera</option>
+        <option value="Armario">Armario</option>
+        <option value="Cama">Cama</option>
+        <option value="Estanteria">Estanteria</option>
+
+    </select>
+    <br>
+    <br>
+
+    <label for="cantidad">Cantidad del Producto (obligatorio):</label>
+    <input type="number" id="cantidad" name="cantidad" min="5" max="20" required>
+    <br>
+    <br>
+
+    <label for="color">Color del Producto (obligatorio):</label>
+    <input type="text" id="color" name="color" required>
+    <br>
+    <br>
+
+    <label for="comentarios">Comentarios:</label>
+    <br>
+    <textarea id="comentarios" name="comentarios" rows="4" cols="30"></textarea>
+    <br>
+    <br>
+
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpiar">
+</form>
+<footer>Creadora Sara Gómez</footer>
+</body>
+</html>
