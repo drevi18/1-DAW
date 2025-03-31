@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="cambiarTexto()">Haz click</button>
+    <p class="texto">Hola</p>
+
+    <script>
+        function cambiarTexto(){
+            var parrafo = document.getElementsByClassName("texto")[0];
+            parrafo.innerHTML = "Nuevo texto";
+            parrafo.style.fontSize = "24px";
+            parrafo.style.fontFamily = "Arial, sans-serif";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="texto">Hola clase DAW</p>
+    <p class="texto">Lorem ipsum, dolor sit amet</p>
+    <button id="mas">+</button>
+    <button id="menos">-</button>
+
+    <script>
+    window.onload = function(){
+    document.getElementById("mas").addEventListener("click", aumentar);
+    document.getElementById("menos").addEventListener("click", disminuir);
+
+    
+    function aumentar(){
+            let parrafo= document.getElementsByClassName("texto");
+            for (let i=0 ; i< parrafo.length; i++){
+                parrafo[i].style.fontSize = "26px";
+                
+            }
+        }
+        
+        function disminuir(){
+            let parrafo= document.getElementsByClassName("texto");
+            for (let i=0 ; i< parrafo.length; i++){
+                parrafo[i].style.fontSize = "16px";
+                
+            }
+        }
+    }
+    </script>
+</body>
+</html>
