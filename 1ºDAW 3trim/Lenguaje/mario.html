@@ -7,7 +7,6 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
             overflow: hidden;
             background-color: white;
             text-align: center;
@@ -30,7 +29,8 @@
             top: 10px;
             left: 10px;
             font-size: 24px;
-            color: black;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
             display: none;
         }
     </style>
@@ -39,23 +39,23 @@
     <img id="mario" src="./img/supermario.png" alt="Mario">
     <div id="lava"></div>
     <div id="mensaje">¡Te has muerto!</div>
-
     <script>
-         
-         window.onload = function(){
-
-            let mario= document.getElementById("mario");
-            let perder= false;
-
-
-            function movermario(){
-                mario.style.top = e.clientX;
-                mario.style.left= e.clientY;
-                
-                 
+        const mario = document.getElementById("mario");
+        const lava = document.getElementById("lava");
+        const mensaje = document.getElementById("mensaje");
+        
+        document.addEventListener("mousemove", (event) => {
+            let x = event.clientX;
+            let y = event.clientY;
+            mario.style.left = x + "px";
+            mario.style.top = y + "px";
+            
+            if (y + mario.height >= window.innerHeight - lava.clientHeight) {
+                document.body.innerHTML = "";
+                document.body.appendChild(mensaje);
+                mensaje.style.display = "block";
             }
-        }
-   
+        });
     </script>
 </body>
 </html>
