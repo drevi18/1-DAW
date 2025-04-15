@@ -1,0 +1,161 @@
+/**
+ * APUNTES DE JAVA - MÉTODOS ÚTILES PARA MANEJO DE CADENAS (String)
+ * Basado en ejercicios PRG5.1_x
+ * Formato preparado para Visual Studio Code
+ */
+
+public class ApuntesJava {
+    public static void main(String[] args) {
+        // Métodos explicados y con ejemplos más abajo 👇
+    }
+
+    /**
+     * MÉTODOS MÁS USADOS PARA STRINGS EN JAVA
+     */
+
+    // Crear una cadena
+    String cadena1 = "Hola"; // con comillas dobles
+    String cadena2 = new String("Mundo"); // usando constructor (no recomendado en general)
+
+    // Conversión entre tipos:
+
+    // String a char
+    char primerChar = cadena1.charAt(0); // 'H'
+
+    // char a String
+    char letraSuelta = 'A';
+    String comoTexto = String.valueOf(letraSuelta); // "A"
+
+    // char a int (valor Unicode)
+    int valorUnicode = (int) letraSuelta; // 65
+
+    // int a char (valor Unicode)
+    char desdeInt = (char) 66; // 'B'
+
+    // String a int
+    String numeroTexto = "123";
+    int numero = Integer.parseInt(numeroTexto); // 123
+
+    // int a String
+    int edad = 25;
+    String edadTexto = String.valueOf(edad); // "25"
+
+    // 1. length()
+    // Devuelve la longitud (número de caracteres) de la cadena
+    String texto = "Hola Mundo";
+    int longitud = texto.length(); // 10
+
+    // 2. charAt(int index)
+    // Devuelve el carácter en la posición indicada (empieza desde 0)
+    char letra = texto.charAt(1); // 'o'
+
+    // 3. toLowerCase() y toUpperCase()
+    // Convierte la cadena a minúsculas o mayúsculas
+    String min = texto.toLowerCase(); // "hola mundo"
+    String may = texto.toUpperCase(); // "HOLA MUNDO"
+
+    // 4. substring(inicio[, fin])
+    // Extrae una subcadena desde 'inicio' hasta 'fin' (exclusivo)
+    String sub = texto.substring(0, 4); // "Hola"
+
+    // 5. indexOf(String s)
+    // Devuelve la posición de la primera aparición de s
+    int pos = texto.indexOf("Mun"); // 5
+
+    // 6. lastIndexOf(String s)
+    // Devuelve la última posición donde aparece s
+    int ultima = texto.lastIndexOf("o"); // 9
+
+    // 7. equals(String s) y equalsIgnoreCase(String s)
+    // Compara cadenas con o sin distinguir mayúsculas
+    boolean igual = texto.equals("Hola Mundo");
+    boolean igualSinCase = texto.equalsIgnoreCase("hola mundo");
+
+    // 8. contains(String s)
+    // Verifica si una cadena contiene otra
+    boolean tiene = texto.contains("Mundo"); // true
+
+    // 9. replace(char viejo, char nuevo) / replace(String viejo, String nuevo)
+    // Sustituye caracteres o subcadenas
+    String reemplazo = texto.replace(" ", "*"); // "Hola*Mundo"
+
+    // 10. split(String regex)
+    // Divide una cadena usando un separador (regex)
+    String[] palabras = texto.split(" "); // ["Hola", "Mundo"]
+
+    // 11. trim()
+    // Elimina espacios en blanco al principio y final
+    String limpio = "  Hola  ".trim(); // "Hola"
+
+    // 12. isEmpty()
+    // Devuelve true si la cadena está vacía
+    boolean vacio = "".isEmpty(); // true
+
+    // 13. startsWith() y endsWith()
+    // Verifica si la cadena empieza o termina por una subcadena
+    boolean empieza = texto.startsWith("Hola"); // true
+    boolean termina = texto.endsWith("Mundo"); // true
+
+    // 14. repeat(int n) (Java 11+)
+    // Repite la cadena n veces
+    String repetido = "Hola ".repeat(3); // "Hola Hola Hola "
+
+    // 15. StringBuilder para manipulación de cadenas (más eficiente)
+    StringBuilder sb = new StringBuilder("Hola");
+    sb.reverse(); // "aloH"
+    sb.append(" Mundo"); // "aloH Mundo"
+    sb.insert(0, "Hey! "); // "Hey! aloH Mundo"
+    sb.delete(0, 5); // "aloH Mundo"
+    String resultado = sb.toString();
+
+    // 16. String.format()
+    // Formatea cadenas como en printf
+    String formateado = String.format("%s tiene %d años", "Juan", 30); // "Juan tiene 30 años"
+
+    // 17. String.valueOf()
+    // Convierte cualquier tipo a cadena
+    String numeroComoCadena = String.valueOf(123);
+
+    // 18. Character.isLetter(), isDigit(), isWhitespace(), isUpperCase(), isLowerCase()
+    // Métodos útiles para analizar caracteres individualmente
+    char c = 'a';
+    boolean letraCheck = Character.isLetter(c); // true
+    boolean digitoCheck = Character.isDigit(c); // false
+
+    // 19. Arrays.asList() + Collections.sort() → Para ordenar cadenas
+    // Arrays.sort() también sirve para arrays
+    String[] nombres = {"Ana", "Luis", "Carlos"};
+    java.util.Arrays.sort(nombres); // Orden alfabético
+
+    // 20. StringTokenizer (alternativa a split)
+    java.util.StringTokenizer st = new java.util.StringTokenizer("Hola mundo bonito");
+    while (st.hasMoreTokens()) {
+        System.out.println(st.nextToken());
+    }
+
+    // 👇 MÉTODOS QUE PUEDES IMPLEMENTAR PARA LOS EJERCICIOS:
+    // contarVocales(String cadena)
+    // contarConsonantes(String cadena)
+    // invertirCadena(String cadena)
+    // contarSubcadena(String texto, String sub)
+    // expandirCadenaNumerica(String codificado)
+    // contarPalabras(String frase)
+    // palabraMasLarga(String frase)
+    // caracteresImpares(String cadena)
+    // formatoFecha(String fecha)
+    // capitalizarPalabras(String frase)
+    // formatoTelefono(String numero)
+    // intercalarCadenas(String a, String b)
+    // reordenarNombre(String nombreCompleto)
+    // repetirCadena(String cadena, int veces)
+    // eliminarSubcadena(String texto, String subcadena)
+    // arabigoARomano(int numero)
+    // letrasNoUsadas(String texto)
+    // porcentajeVocales(String texto)
+    // buscarDesdePosicion(String texto, String sub, int pos)
+    // limpiarEspaciosMultiples(String frase)
+    // palabrasConLongitud(String frase)
+    // histogramaVocales(String texto)
+    // mostrarPalabrasEnLineas(String frase)
+    // funciones de fecha a int y viceversa
+}
