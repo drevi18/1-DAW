@@ -10,7 +10,28 @@
 
          hijo.firstElementChild.style.color="blue";
          hijo.lastElementChild.textContent = "Último elemento";
-         let 
+         
+         let array = hijo.children;
+         let segn = array[1];
+        segn.setAttribute("class","active");
+
+        let num = array.length;
+         console.log(num);
+
+         let ejer1 = document.getElementById("item3");
+         ejer1.previousElementSibling.textContent="Anterior";
+
+        let ejer2 = document.getElementsByClassName("boton");
+        ejer2[0].nextElementSibling.style.display = "none";
+
+        let ejer3 = document.getElementById("button");
+        for (i=0 ; i < hijo.length ; i++){
+            ejer3[i].
+        }
+
+
+         
+         
 
     }
 
@@ -31,6 +52,19 @@
             <span>span</span><a href="">enlace</a>
             <p>párrafo</p>
         </li>
+        <li id="item3">
+            <span>span</span><a href="">enlace</a>
+            <p>párrafo</p>
+        </li>
+        <li class="boton">
+            <span>span</span><a href="">enlace</a>
+            <p>párrafo</p>
+        </li>
+        <li>
+            <span>span</span><a href="">enlace</a>
+            <p>párrafo</p>
+        </li>
+        <button id="button">click</button>
     </ul>
 
 
