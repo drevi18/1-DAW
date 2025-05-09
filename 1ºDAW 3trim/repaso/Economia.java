@@ -1,3 +1,4 @@
+package repaso;
 /**
  * Clase base que representa una operación económica en una comunidad.
  * Contiene información general como el mes, descripción, cantidad de dinero implicada y el estado de la operación.

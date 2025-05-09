@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+import repaso.Economia;
+
 /**
  * Clase principal que gestiona el sistema de administración de fincas.
  * Incluye menús para gestionar fincas, empresas de servicios, incidencias

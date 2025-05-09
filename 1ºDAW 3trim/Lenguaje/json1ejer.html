@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+        let ejer ={
+        "nombre":"Pepito Rodriguez",
+        "edad":30,
+        "nacionalidad":"Española",
+        "altura":"182 cm",
+        "peso":75
+        }
+
+        console.log(ejer.altura);
+
+
+        let ejer2 = {
+            "nombre":"Evaristo Probencio",
+            "edad":27,
+            "nacionalidad":"Chileno",
+            "altura":"172 cm",
+            "peso":75,
+            "pasatiempos":["Polo","Cricket","Ski","Drafting","Gaming"],
+            "soltero":true,
+            "direccion":{
+                "calle":"Ave. Siempre Viva",
+                "numero":"123",
+                "pais":"México"
+                }
+            }
+            
+            for (let i = 0; i < ejer2.pasatiempos.length; i++) {
+                document.write(ejer2.pasatiempos[i]);
+                
+            }
+      
+
+        console.log(ejer2.pasatiempos.length);
+
+        let ejer3 = {
+            "personas": [
+            {
+                "nombre": "Julio Noguera",
+                "edad": 30,
+                "nacionalidad": "Española",
+                "altura": "182 cm",
+                "peso": 75,
+                "pasatiempos": [
+                    "Polo",
+                    "Cricket",
+                    "Ski",
+                    "Drafting",
+                    "Gaming"
+                ],
+                "soltero": true,
+                "direccion": {
+                    "calle": "Ave. Siempre Viva",
+                    "numero": "123",
+                    "pais": "España"
+                }
+            },
+            {
+                "nombre": "Ramón",
+                "edad": 22,
+                "nacionalidad": "Catalana",
+                "altura": "178 cm",
+                "peso": 72,
+                "pasatiempos": [
+                    "Pintar",
+                    "Programar",
+                    "Scuba Diving"
+                ],
+                "soltero": true,
+                "direccion": {
+                    "calle": "Ave. Siempre Viva",
+                    "numero": "123",
+                    "pais": "Catalana"
+                }
+            },
+            {
+                "nombre": "Amiga Pepita",
+                "edad": 25,
+                "nacionalidad": "Cubana",
+                "altura": "167 cm",
+                "peso": 55,
+                "pasatiempos": [
+                    "Natación",
+                    "Alpinismo",
+                    "Cinéfila",
+                    "Socializar",
+                    "Gaming"
+                ],
+                "soltero": true,
+                "direccion": {
+                    "calle": "Cerro del Estudiante",
+                    "numero": "456",
+                    "pais": "Argentina"
+                }
+            }
+            ]
+        }
+
+        for (let i = 0; i < ejer3.personas.length; i++) {
+            document.write("<br>"+ejer3.personas[i].nombre);
+            document.write("<br>"+ejer3.personas[i].nacionalidad);
+            document.write("<br>"+ejer3.personas[i].direccion.calle);
+            document.write("<br>"+ejer3.personas[i].nombre+ " con direccion:  "+ejer3.personas[i].direccion.calle + " y nacionalidad:");
+            
+        }
+        
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
