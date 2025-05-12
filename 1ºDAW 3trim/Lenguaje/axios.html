@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  <!--libreria-->
+    
+    <script>
+  
+    axios.get('https://restcountries.com/v3.1/name/spain')
+    .then(response =>{
+        console.log(response.data[0].name.common);
+        document.writeln("<h1>"+response.data[0].name.common+"<\h1>")
+        console.log(response.data[0].capital);
+        document.writeln("<h1>"+response.data[0].capital+"<\h1>")
+        
+        console.log(response.data[0].flags.png);
+        document.writeln("<img src='"+response.data[0].flags.png+"''>");
+    })
+    .catch(error => {
+        console.log(error);
+    })
+  
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
