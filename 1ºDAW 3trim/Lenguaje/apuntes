@@ -143,6 +143,73 @@
     // PATCH → actualizar parcial
     // DELETE → eliminar
 
+    // -----------------------------------------
+    // 🌍 EJERCICIO COMPLETO: Buscar país y mostrar info
+    // -----------------------------------------
+
+    // Sintaxis:
+    // - .get() para pedir los datos
+    // - .createElement() para crear nodos
+    // - .textContent / .src / .alt / .width para añadir contenido o atributos
+    // - .appendChild() para insertar en el DOM
+    // - .toLowerCase() para comparar texto sin importar mayúsculas
+
+    window.onload = function () {
+      document.getElementById("buscar").addEventListener("click", buscar);
+      let lista = document.getElementById("info");
+
+      function buscar() {
+        lista.innerHTML = ""; // Limpiar resultados anteriores
+        let paisInput = document.getElementById("pais").value.trim().toLowerCase();
+
+        axios.get("https://restcountries.com/v3.1/all")
+          .then(response => {
+            let paises = response.data;
+            let encontrado = false;
+
+            for (let i = 0; i < paises.length; i++) {
+              let nombre = paises[i].name.common;
+
+              if (nombre.toLowerCase() === paisInput) {
+                encontrado = true;
+
+                // Nombre del país
+                let li1 = document.createElement("li");
+                li1.textContent = "Nombre: " + nombre;
+                lista.appendChild(li1);
+
+                // Capital(es)
+                let capitales = paises[i].capital || ["Desconocida"];
+                for (let j = 0; j < capitales.length; j++) {
+                  let li2 = document.createElement("li");
+                  li2.textContent = "Capital: " + capitales[j];
+                  lista.appendChild(li2);
+                }
+
+                // Bandera
+                let img = document.createElement("img");
+                img.src = paises[i].flags.png; // URL de la imagen
+                img.alt = "Bandera de " + nombre; // Texto alternativo
+                img.width = 150; // Ancho en píxeles
+                lista.appendChild(img);
+
+                break; // Terminar el bucle si lo encuentra
+              }
+            }
+
+            if (!encontrado) {
+              let li = document.createElement("li");
+              li.textContent = "País no encontrado.";
+              lista.appendChild(li);
+            }
+          })
+          .catch(error => {
+            console.error("Error al obtener datos:", error);
+          });
+      }
+    };
+
+
   </script>
 </body>
 </html>
