@@ -30,6 +30,25 @@
       throw new Error("La edad no puede ser negativa");
     }
 
+// ------------------------------
+  // 🔠 CAMBIO DE TAMAÑO DE TEXTO
+  // ------------------------------
+
+  // Seleccionar botones y párrafos
+  const plus = document.getElementById('plus');
+  const minus = document.getElementById('minus');
+  const ps = document.querySelectorAll('p');
+
+  // Evento para aumentar tamaño a 50px
+  plus.onclick = () => {
+    ps.forEach(p => p.style.fontSize = '50px');
+  };
+
+  // Evento para disminuir tamaño a 16px
+  minus.onclick = () => {
+    ps.forEach(p => p.style.fontSize = '16px');
+  };
+
     // ------------------------------
     // 📝 CREACIÓN Y MANIPULACIÓN DEL DOM
     // ------------------------------
