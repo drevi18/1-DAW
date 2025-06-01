@@ -137,11 +137,15 @@
     // ------------------------------
     // ⚙️ VERBOS HTTP
     // ------------------------------
-    // GET → obtener
-    // POST → crear
-    // PUT → actualizar total
-    // PATCH → actualizar parcial
-    // DELETE → eliminar
+    /*
+| Verbo  | Acción                 | Descripción breve                      | Sintaxis (axios)                            |
+|--------|------------------------|--------------------------------------|--------------------------------------------|
+| GET    | Obtener datos          | Leer información de un recurso.      | axios.get(url).then(res => ...)             |
+| POST   | Crear un nuevo recurso | Enviar datos para crear algo.        | axios.post(url, data).then(res => ...)      |
+| PUT    | Actualizar un recurso  | Modificar totalmente un recurso.     | axios.put(url, data).then(res => ...)       |
+| PATCH  | Actualizar parcialmente| Cambiar solo una parte del recurso.  | axios.patch(url, data).then(res => ...)     |
+| DELETE | Eliminar un recurso    | Borrar un recurso del servidor.      | axios.delete(url).then(res => ...)          |
+*/
 
     // -----------------------------------------
     // 🌍 EJERCICIO COMPLETO: Buscar país y mostrar info
