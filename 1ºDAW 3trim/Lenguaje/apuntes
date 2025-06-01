@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHULETA FINAL - DOM, APIs y Excepciones en JS</title>
+</head>
+<body>
+  <h1>📘 CHULETA FINAL - DOM, APIs y EXCEPCIONES EN JS</h1>
+
+  <script>
+    // ------------------------------
+    // ⚠️ MANEJO DE ERRORES EN JS
+    // ------------------------------
+
+    try {
+      let x = 10;
+      let y = 0;
+      let z = x / y;
+      if (!isFinite(z)) throw new Error("División por cero");
+    } catch (error) {
+      console.log("Error detectado:", error.message);
+    } finally {
+      console.log("Esto se ejecuta siempre (finally)");
+    }
+
+    // Lanzar error manual
+    let edad = -1;
+    if (edad < 0) {
+      throw new Error("La edad no puede ser negativa");
+    }
+
+    // ------------------------------
+    // 📝 CREACIÓN Y MANIPULACIÓN DEL DOM
+    // ------------------------------
+
+    let nuevoParrafo = document.createElement("p");
+    nuevoParrafo.textContent = "Este es un nuevo párrafo.";
+    nuevoParrafo.style.color = "blue";
+    document.body.appendChild(nuevoParrafo);
+
+    let boton = document.createElement("button");
+    boton.textContent = "Haz clic aquí";
+    boton.setAttribute("id", "miBoton");
+    document.body.appendChild(boton);
+
+    let lista = document.createElement("ul");
+    lista.id = "miLista";
+    document.body.appendChild(lista);
+
+    let nuevoItem = document.createElement("li");
+    nuevoItem.textContent = "Nuevo ítem";
+    lista.appendChild(nuevoItem);
+
+    // ------------------------------
+    // 📖 EJERCICIO: Lista Dinámica
+    // ------------------------------
+
+    window.onload = function () {
+      let lista = document.createElement("ul");
+      for (let i = 1; i <= 10; i++) {
+        let item = document.createElement("li");
+        item.textContent = "Ítem " + i;
+        lista.appendChild(item);
+      }
+      document.body.appendChild(lista);
+    };
+
+    // ------------------------------
+    // 🧨 EVENTOS Y DOM COMPLEJO
+    // ------------------------------
+
+    let boton2 = document.createElement("button");
+    boton2.textContent = "Púlsame";
+    boton2.addEventListener("click", function () {
+      let div = document.createElement("div");
+      div.style.border = "1px solid black";
+
+      let h2 = document.createElement("h2");
+      h2.textContent = "Título";
+
+      let p = document.createElement("p");
+      p.textContent = "Este es un párrafo dentro del div.";
+
+      div.appendChild(h2);
+      div.appendChild(p);
+      document.body.appendChild(div);
+      boton2.remove();
+    });
+    document.body.appendChild(boton2);
+
+    // ------------------------------
+    // 🔀 NAVEGACIÓN EN EL DOM
+    // ------------------------------
+
+    // parentElement, nextElementSibling, etc.
+    // document.getElementById("id").parentElement; // sube un nivel
+    // .firstElementChild, .lastElementChild → hijos
+    // .nextElementSibling, .previousElementSibling → hermanos
+
+    // ------------------------------
+    // ❌ ELIMINAR NODOS
+    // ------------------------------
+
+    // document.getElementById("miElemento").remove();
+
+    // ------------------------------
+    // 🌐 CONSUMO DE APIS CON AXIOS Y FETCH
+    // ------------------------------
+
+    // Fetch API (manejo manual de errores)
+    fetch("https://restcountries.com/v3.1/all")
+      .then(res => {
+        if (!res.ok) throw new Error("Error HTTP");
+        return res.json();
+      })
+      .then(data => console.log("Países:", data))
+      .catch(err => console.error("Error en fetch:", err));
+
+    // Axios (manejo automático)
+    axios.get("https://restcountries.com/v3.1/name/spain")
+      .then(res => {
+        let pais = res.data[0];
+        console.log("España:", pais.name.common, pais.capital);
+      })
+      .catch(err => console.error("Error en Axios:", err));
+
+    // Insertar datos con POST usando Axios y FormData
+    let datos = new FormData();
+    datos.append("nombre", "Roger");
+    datos.append("edad", "45");
+
+    axios.post("http://34.224.222.1:8888/index.php", datos)
+      .then(res => console.log("Insertado:", res.data))
+      .catch(err => console.log("Error POST:", err));
+
+    // ------------------------------
+    // ⚙️ VERBOS HTTP
+    // ------------------------------
+    // GET → obtener
+    // POST → crear
+    // PUT → actualizar total
+    // PATCH → actualizar parcial
+    // DELETE → eliminar
+
+  </script>
+</body>
+</html>
