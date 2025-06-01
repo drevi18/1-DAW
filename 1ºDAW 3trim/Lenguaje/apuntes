@@ -66,6 +66,46 @@
       document.body.appendChild(lista);
     };
 
+// ------------------------------
+    // 🔁 NAVEGACIÓN EN EL DOM
+    // ------------------------------
+
+    // 🔼 Subir al padre
+    elemento.parentElement;
+
+    // 🔽 Acceder a hijos
+    elemento.children;
+    elemento.firstElementChild;
+    elemento.lastElementChild;
+
+    // ↔️ Hermanos
+    elemento.nextElementSibling;
+    elemento.previousElementSibling;
+
+    // ------------------------------
+    // 🧱 MANIPULACIÓN BÁSICA
+    // ------------------------------
+
+    // Cambiar contenido
+    elemento.textContent = "Nuevo texto";
+
+    // Cambiar estilo
+    elemento.style.color = "blue";
+    elemento.style.backgroundColor = "gray";
+
+    // Añadir clase
+    elemento.classList.add("clase");
+
+    // Contar hijos
+    let total = elemento.children.length;
+
+    // ------------------------------
+    // ❌ ELIMINAR ELEMENTOS
+    // ------------------------------
+
+    elemento.remove(); // Elimina el nodo
+
+
     // ------------------------------
     // 🧨 EVENTOS Y DOM COMPLEJO
     // ------------------------------
