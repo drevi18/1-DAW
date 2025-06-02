@@ -71,6 +71,24 @@
     nuevoItem.textContent = "Nuevo ítem";
     lista.appendChild(nuevoItem);
 
+/*
+| MÉTODO                    | SINTAXIS                                | DESCRIPCIÓN RÁPIDA                                  |
+|---------------------------|------------------------------------------|-----------------------------------------------------|
+| getElementById            | document.getElementById("id")            | Selecciona un elemento por su id (único)           |
+| getElementsByClassName    | document.getElementsByClassName("clase") | Todos los elementos con esa clase (HTMLCollection) |
+| getElementsByTagName      | document.getElementsByTagName("etiqueta")| Todos los elementos con esa etiqueta (ej: "div")   |
+| getElementsByName         | document.getElementsByName("name")       | Elementos con ese atributo name (inputs, radios)   |
+| querySelector             | document.querySelector("selector")       | El primer elemento que coincida (como CSS)         |
+| querySelectorAll          | document.querySelectorAll("selector")    | Todos los que coincidan (NodeList con forEach)     |
+
+// Ejemplos útiles:
+// document.getElementById("titulo").textContent;
+// document.getElementsByClassName("item")[0].style.color = "red";
+// document.querySelector("div p").innerHTML;
+// document.querySelectorAll(".caja").forEach(c => c.remove());
+*/
+
+
     // ------------------------------
     // 📖 EJERCICIO: Lista Dinámica
     // ------------------------------
