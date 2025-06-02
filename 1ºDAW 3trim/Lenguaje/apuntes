@@ -205,6 +205,53 @@
 | PATCH  | Actualizar parcialmente| Cambiar solo una parte del recurso.  | axios.patch(url, data).then(res => ...)     |
 | DELETE | Eliminar un recurso    | Borrar un recurso del servidor.      | axios.delete(url).then(res => ...)          |
 */
+<!-- ================================
+     🌐 EJERCICIO: ENVÍO DE DATOS CON AXIOS Y FORM DATA (RESUMEN)
+     ================================ -->
+
+<!-- 1. Estructura HTML mínima para el formulario -->
+<form id="formularioDatos">
+  <input type="text" id="nombre"   placeholder="Nombre" />
+  <input type="text" id="apellido" placeholder="Apellidos" />
+  <input type="text" id="edad"     placeholder="Edad" />
+  <input type="text" id="hobbie"   placeholder="Hobbie" />
+  <button type="button" id="btnEnviar">Enviar</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  // 2. Obtener referencias a inputs y botón
+  const inputNombre   = document.getElementById("nombre");
+  const inputApellido = document.getElementById("apellido");
+  const inputEdad     = document.getElementById("edad");
+  const inputHobbie   = document.getElementById("hobbie");
+  const btnEnviar     = document.getElementById("btnEnviar");
+
+  // 3. Al hacer clic en "Enviar", capturamos valores y enviamos con Axios
+  btnEnviar.addEventListener("click", function enviarDatos() {
+    // Obtener valores de cada campo
+    const nombreVal   = inputNombre.value;
+    const apellidoVal = inputApellido.value;
+    const edadVal     = inputEdad.value;
+    const hobbieVal   = inputHobbie.value;
+
+    // 4. Crear FormData y añadir pares clave/valor
+    const formData = new FormData();
+    formData.append("nombre",   nombreVal);
+    formData.append("apellidos",apellidoVal);
+    formData.append("edad",     edadVal);
+    formData.append("hobbies",  hobbieVal);
+
+    // 5. Enviar petición POST con Axios
+    axios.post("http://54.147.27.132:8888/index.php", formData)
+      .then(response => {
+        console.log("Respuesta del servidor:", response.data);
+      })
+      .catch(error => {
+        console.error("Error en la petición POST:", error);
+      });
+  });
+</script>
 
     // -----------------------------------------
     // 🌍 EJERCICIO COMPLETO: Buscar país y mostrar info
