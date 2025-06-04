@@ -1,0 +1,59 @@
+<script>
+window.onload = function () {
+  let input = document.createElement("input");
+  input.type = "text";
+  input.id = "termino";
+  input.placeholder = "Buscar país";
+
+  let boton = document.createElement("button");
+  boton.id = "btnBuscar";
+  boton.textContent = "Buscar";
+
+  let resultados = document.createElement("ul");
+  resultados.id = "resultados";
+
+  document.body.appendChild(input);
+  document.body.appendChild(boton);
+  document.body.appendChild(resultados);
+
+  boton.addEventListener("click", function () {
+    let termino = input.value.trim().toLowerCase();
+    resultados.innerHTML = "";
+
+    fetch("https://restcountries.com/v3.1/name/" + termino)
+      .then(res => {
+        if (!res.ok) throw new Error("País no encontrado");
+        return res.json();
+      })
+      .then(data => {
+        if (data.length > 5) {
+          let aviso = document.createElement("p");
+          aviso.textContent = "Demasiados resultados, afina la búsqueda";
+          document.body.appendChild(aviso);
+        }
+
+        data.forEach(pais => {
+          let li = document.createElement("li");
+          li.textContent = "Nombre: " + pais.name.common;
+          resultados.appendChild(li);
+
+          let capital = pais.capital ? pais.capital[0] : "Desconocida";
+          let li2 = document.createElement("li");
+          li2.textContent = "Capital: " + capital;
+          resultados.appendChild(li2);
+
+          let img = document.createElement("img");
+          img.src = pais.flags.png;
+          img.alt = "Bandera de " + pais.name.common;
+          img.width = 100;
+          resultados.appendChild(img);
+        });
+      })
+      .catch(err => {
+        let errorLi = document.createElement("li");
+        errorLi.textContent = "Error: " + err.message;
+        resultados.appendChild(errorLi);
+      });
+  });
+};
+</script>

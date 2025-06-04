@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>  <!--libreria-->
+  <script>
+    let data = new FormData();
+        data.append('nombre', 'sara');
+        data.append('apellidos', 'gomez');
+        data.append('edad', '20');
+        data.append('hobbies', 'tenis');
+        axios({
+                url: 'http://54.88.178.107:8888',
+                method: 'POST',
+                data: data
+            }).then(function (response) {
+                console.log(response.data);
+            }).catch(function (error) {
+                console.log(error.response.statusText);
+            });
+
+  axios.get('')
+  .then(response => {  //respuesta del servidor y lo transforma a JSON
+    console.log(response.data);   //muestra un array de todos los paises
+  })
+  .catch(error => {   //en caso de error muestra la info.
+    console.error(error);
+  });
+
+  </script>
+</body>
+</html>

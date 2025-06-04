@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+
+            let boton = document.createElement("button");
+            boton.textContent= "pulsa";
+            boton.setAttribute("id", "btn");
+            document.body.appendChild(boton)
+            document.getElementById("btn").addEventListener("click", aparecer);
+
+            let lista = document.createElement("ul");
+            
+            function aparecer(){
+                for (let i = 0; i < 11; i++) {
+                    let li = document.createElement("li");
+                    li.textContent = i;
+                    lista.appendChild(li);
+
+                }
+                document.body.appendChild(lista);
+            }
+
+
+
+            
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

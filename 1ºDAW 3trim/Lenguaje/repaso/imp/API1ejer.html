@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        window.onload = function(){
+            document.getElementById("buscar").addEventListener("click", buscar);
+            let lista = document.getElementById("info");
+            
+            function buscar(){
+                axios.get('https://restcountries.com/v3.1/all')
+                .then(response => {
+                        let pais = document.getElementById("pais").value;
+                        let paises = response.data;
+
+                        for (let i = 0; i < paises.length; i++) {
+                            let nombre = paises[i].name.common;
+                            
+                            if(nombre.toLowerCase() === pais.toLowerCase()){
+                                let li1 = document.createElement("li");
+                                    i1.textContent = nombre;
+                                    ista.appendChild(li1);
+                                
+                                let li2 = document.createElement("li");
+                                let capital = paises[i].capital;
+                                    li2.textContent = capital;
+                                    lista.appendChild(li2);    
+                                    
+                                let img = document.createElement("img");
+                                    img.src = paises[i].flags.png;
+                                    img.alt = "Bandera de " + nombre;
+                                    img.width = 150;
+                                    lista.appendChild(img);
+                            }                            
+                        }
+                    
+                    })
+                    .catch(error => {
+                        console.error('Ocurrió un error:', error);
+                    });
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="pais" placeholder="Introduce el país">
+    <button id="buscar">Buscar</button>
+    <ul id="info"></ul>
+</body>
+</html>

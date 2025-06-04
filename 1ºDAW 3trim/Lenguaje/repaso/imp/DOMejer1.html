@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+        
+            let lista = document.getElementById("miLista");
+            for (let i = 1; i < 11; i++) {
+                let nuevo = document.createElement("li");
+                nuevo.textContent = "Pos "+i;
+                lista.appendChild(nuevo);
+                
+            }
+
+        let boton = document.createElement("button");
+        boton.textContent = "apreta"
+        boton.setAttribute("id", "miBoton");
+        document.body.appendChild(boton)
+        document.getElementById("miBoton").addEventListener("click", crear);
+
+        function crear(){
+            let texto = document.createElement("h1");
+            let texto2 = document.createElement("h5");
+            texto.textContent  = "Holaa";
+            texto2.textContent = "Esto es una prueba";
+            document.body.append(texto,texto2);
+        }
+
+            
+
+        }
+
+    </script>
+<body>
+</head>
+    <ul id="miLista"></ul>
+    
+</body>
+</html>

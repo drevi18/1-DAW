@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Dedo y la Caja</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: lightblue;
+            text-align: center;
+        }
+        #dedo {
+            position: absolute;
+            width: 40px;
+            top: 50px;
+            left: 50px;
+        }
+        #caja {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        #mensaje {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img id="dedo" src="https://img.icons8.com/ios/452/pointing-hand.png" alt="Dedo">
+    <div id="caja"></div>
+    <div id="mensaje">¡Has tocado la caja!</div>
+
+    <script>
+        const dedo = document.getElementById("dedo");
+        const caja = document.getElementById("caja");
+        const mensaje = document.getElementById("mensaje");
+
+        let cajaPosY = 0;
+        let cajaSpeed = 2; // Velocidad de la caja
+
+        document.addEventListener("mousemove", (event) => {
+            let x = event.clientX;
+            let y = event.clientY;
+            dedo.style.left = x + "px";
+            dedo.style.top = y + "px";
+        });
+
+        function moverCaja() {
+            cajaPosY += cajaSpeed;
+            caja.style.top = cajaPosY + "px";
+
+            if (cajaPosY >= window.innerHeight - caja.clientHeight) {
+                cajaSpeed = -cajaSpeed; // Cambia la dirección cuando toca el fondo
+            }
+            if (cajaPosY <= 0) {
+                cajaSpeed = -cajaSpeed; // Cambia la dirección cuando toca la parte superior
+            }
+
+            if (cajaPosY + caja.clientHeight >= parseInt(dedo.style.top) &&
+                parseInt(dedo.style.left) >= parseInt(caja.style.left) &&
+                parseInt(dedo.style.left) <= parseInt(caja.style.left) + caja.clientWidth) {
+                mensaje.style.display = "block";
+            }
+            requestAnimationFrame(moverCaja); // Llama a la función en el siguiente ciclo de renderizado
+        }
+
+        moverCaja(); // Inicia el movimiento de la caja
+    </script>
+</body>
+</html>

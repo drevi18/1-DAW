@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        
+        window.onload = function(){
+    
+            document.getElementById("boton").addEventListener("click",enviar)
+           
+
+
+            function enviar(){
+                let nombre = document.getElementById("nombre").value;
+                let apellidos = document.getElementById("apellido").value;
+                let edad = document.getElementById("edad").value;
+                let hobbies = document.getElementById("hobbie").value;
+                
+                let data = new FormData();
+                    data.append('nombre', nombre);
+                    data.append('apellidos', apellidos);
+                    data.append('edad', edad);
+                    data.append('hobbies', hobbies);
+            
+                 axios({
+                url: 'http://54.147.27.132:8888/index.php',
+                method: 'POST',
+                data: data
+            }).then(function (response) {
+                console.log(response.data);
+            }).catch(function (error) {
+                console.log(error.response.statusText);
+            });
+        
+        
+        }
+
+    }
+            
+   
+  </script>
+</head>
+<body>
+    <form action="">
+    <h1>Introduce la información que se solicita</h1>
+    <input type="text" id="nombre" placeholder="Escribe tu nombre aquí">
+    <br>
+    <input type="text"  id="apellido" placeholder="Escribe tus apellidos aquí">
+    <br>
+    <input type="text"  id="edad" placeholder="Escribe tu edad aquí">
+    <br>
+    <input type="text" id="hobbie" placeholder="Escribe tus hobbies aquí">
+    <br>
+    <button type="button" id="boton">Enviar</button>
+    </form>
+</body>
+</html>

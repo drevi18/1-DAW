@@ -1,0 +1,49 @@
+<ul id="listaPrincipal">
+  <li class="item">Elemento 1
+    <ul class="sublista">
+      <li>Sub1</li>
+      <li>Sub2</li>
+    </ul>
+  </li>
+  <li class="item">Elemento 2
+    <ul class="sublista">
+      <li>SubA</li>
+      <li id="borrar">SubB</li>
+      <li>SubC</li>
+    </ul>
+  </li>
+  <li class="item" id="itemFinal">Elemento 3</li>
+</ul>
+
+<script>
+window.onload = function () {
+  // 1. Subir al padre con clase "item" y cambiar fondo
+  let subB = document.getElementById("borrar");
+  let padre = subB.parentElement;
+  while (padre && !padre.classList.contains("item")) {
+    padre = padre.parentElement;
+  }
+  if (padre) padre.style.backgroundColor = "lightgray";
+
+  // 2. Añadir nodos al primer y último hijo de "itemFinal"
+  let itemFinal = document.getElementById("itemFinal");
+
+  let p = document.createElement("p");
+  p.textContent = "¡Soy el primero!";
+  itemFinal.insertBefore(p, itemFinal.firstChild);
+
+  let span = document.createElement("span");
+  span.textContent = "¡Soy el último!";
+  itemFinal.appendChild(span);
+
+  // 3. Moverse entre hermanos y eliminar SubB
+  let primerItem = document.querySelector(".item");
+  let segundoItem = primerItem.nextElementSibling;
+  let borrar = segundoItem.querySelector("#borrar");
+  if (borrar) borrar.remove();
+
+  // 4. Contar items en la lista principal
+  let total = document.querySelectorAll("#listaPrincipal > .item").length;
+  console.log("Total de elementos .item:", total);
+};
+</script>
