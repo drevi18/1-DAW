@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHULETA FINAL - DOM, APIs y Excepciones en JS</title>
+</head>
+<body>
+  <h1>📘 CHULETA FINAL - DOM, APIs y EXCEPCIONES EN JS</h1>
+
+  <script>
+    // ------------------------------
+    // ⚠️ MANEJO DE ERRORES EN JS
+    // ------------------------------
+
+    try {
+      let x = 10;
+      let y = 0;
+      let z = x / y;
+      if (!isFinite(z)) throw new Error("División por cero");
+    } catch (error) {
+      console.log("Error detectado:", error.message);
+    } finally {
+      console.log("Esto se ejecuta siempre (finally)");
+    }
+
+    // Lanzar error manual
+    let edad = -1;
+    if (edad < 0) {
+      throw new Error("La edad no puede ser negativa");
+    }
+
+// ------------------------------
+  // 🔠 CAMBIO DE TAMAÑO DE TEXTO
+  // ------------------------------
+
+  // Seleccionar botones y párrafos
+  const plus = document.getElementById('plus');
+  const minus = document.getElementById('minus');
+  const ps = document.querySelectorAll('p');
+
+  // Evento para aumentar tamaño a 50px
+  plus.onclick = () => {
+    ps.forEach(p => p.style.fontSize = '50px');
+  };
+
+  // Evento para disminuir tamaño a 16px
+  minus.onclick = () => {
+    ps.forEach(p => p.style.fontSize = '16px');
+  };
+
+    // ------------------------------
+    // 📝 CREACIÓN Y MANIPULACIÓN DEL DOM
+    // ------------------------------
+
+    let nuevoParrafo = document.createElement("p");
+    nuevoParrafo.textContent = "Este es un nuevo párrafo.";
+    nuevoParrafo.style.color = "blue";
+    document.body.appendChild(nuevoParrafo);
+
+    let boton = document.createElement("button");
+    boton.textContent = "Haz clic aquí";
+    boton.setAttribute("id", "miBoton");
+    document.body.appendChild(boton);
+
+    let lista = document.createElement("ul");
+    lista.id = "miLista";
+    document.body.appendChild(lista);
+
+    let nuevoItem = document.createElement("li");
+    nuevoItem.textContent = "Nuevo ítem";
+    lista.appendChild(nuevoItem);
+
+/*
+| MÉTODO                    | SINTAXIS                                | DESCRIPCIÓN RÁPIDA                                  |
+|---------------------------|------------------------------------------|-----------------------------------------------------|
+| getElementById            | document.getElementById("id")            | Selecciona un elemento por su id (único)           |
+| getElementsByClassName    | document.getElementsByClassName("clase") | Todos los elementos con esa clase (HTMLCollection) |
+| getElementsByTagName      | document.getElementsByTagName("etiqueta")| Todos los elementos con esa etiqueta (ej: "div")   |
+| getElementsByName         | document.getElementsByName("name")       | Elementos con ese atributo name (inputs, radios)   |
+| querySelector             | document.querySelector("selector")       | El primer elemento que coincida (como CSS)         |
+| querySelectorAll          | document.querySelectorAll("selector")    | Todos los que coincidan (NodeList con forEach)     |
+
+// Ejemplos útiles:
+// document.getElementById("titulo").textContent;
+// document.getElementsByClassName("item")[0].style.color = "red";
+// document.querySelector("div p").innerHTML;
+// document.querySelectorAll(".caja").forEach(c => c.remove());
+*/
+
+
+    // ------------------------------
+    // 📖 EJERCICIO: Lista Dinámica
+    // ------------------------------
+
+    window.onload = function () {
+      let lista = document.createElement("ul");
+      for (let i = 1; i <= 10; i++) {
+        let item = document.createElement("li");
+        item.textContent = "Ítem " + i;
+        lista.appendChild(item);
+      }
+      document.body.appendChild(lista);
+    };
+
+// ------------------------------
+    // 🔁 NAVEGACIÓN EN EL DOM
+    // ------------------------------
+
+    // 🔼 Subir al padre
+    elemento.parentElement;
+
+    // 🔽 Acceder a hijos
+    elemento.children;
+    elemento.firstElementChild;
+    elemento.lastElementChild;
+
+    // ↔️ Hermanos
+    elemento.nextElementSibling;
+    elemento.previousElementSibling;
+
+    // ------------------------------
+    // 🧱 MANIPULACIÓN BÁSICA
+    // ------------------------------
+
+    // Cambiar contenido
+    elemento.textContent = "Nuevo texto";
+
+    // Cambiar estilo
+    elemento.style.color = "blue";
+    elemento.style.backgroundColor = "gray";
+
+    // Añadir clase
+    elemento.classList.add("clase");
+
+    // Contar hijos
+    let total = elemento.children.length;
+
+    // ------------------------------
+    // ❌ ELIMINAR ELEMENTOS
+    // ------------------------------
+
+    elemento.remove(); // Elimina el nodo
+
+
+    // ------------------------------
+    // 🧨 EVENTOS Y DOM COMPLEJO
+    // ------------------------------
+
+    let boton2 = document.createElement("button");
+    boton2.textContent = "Púlsame";
+    boton2.addEventListener("click", function () {
+      let div = document.createElement("div");
+      div.style.border = "1px solid black";
+
+      let h2 = document.createElement("h2");
+      h2.textContent = "Título";
+
+      let p = document.createElement("p");
+      p.textContent = "Este es un párrafo dentro del div.";
+
+      div.appendChild(h2);
+      div.appendChild(p);
+      document.body.appendChild(div);
+      boton2.remove();
+    });
+    document.body.appendChild(boton2);
+
+    // ------------------------------
+    // 🔀 NAVEGACIÓN EN EL DOM
+    // ------------------------------
+
+    // parentElement, nextElementSibling, etc.
+    // document.getElementById("id").parentElement; // sube un nivel
+    // .firstElementChild, .lastElementChild → hijos
+    // .nextElementSibling, .previousElementSibling → hermanos
+
+    // ------------------------------
+    // ❌ ELIMINAR NODOS
+    // ------------------------------
+
+    // document.getElementById("miElemento").remove();
+
+    // ------------------------------
+    // 🌐 CONSUMO DE APIS CON AXIOS Y FETCH
+    // ------------------------------
+
+    // Fetch API (manejo manual de errores)
+    fetch("https://restcountries.com/v3.1/all")
+      .then(res => {
+        if (!res.ok) throw new Error("Error HTTP");
+        return res.json();
+      })
+      .then(data => console.log("Países:", data))
+      .catch(err => console.error("Error en fetch:", err));
+
+    // Axios (manejo automático)
+    axios.get("https://restcountries.com/v3.1/name/spain")
+      .then(res => {
+        let pais = res.data[0];
+        console.log("España:", pais.name.common, pais.capital);
+      })
+      .catch(err => console.error("Error en Axios:", err));
+
+    // Insertar datos con POST usando Axios y FormData
+    let datos = new FormData();
+    datos.append("nombre", "Roger");
+    datos.append("edad", "45");
+
+    axios.post("http://34.224.222.1:8888/index.php", datos)
+      .then(res => console.log("Insertado:", res.data))
+      .catch(err => console.log("Error POST:", err));
+
+    // ------------------------------
+    // ⚙️ VERBOS HTTP
+    // ------------------------------
+    /*
+| Verbo  | Acción                 | Descripción breve                      | Sintaxis (axios)                            |
+|--------|------------------------|--------------------------------------|--------------------------------------------|
+| GET    | Obtener datos          | Leer información de un recurso.      | axios.get(url).then(res => ...)             |
+| POST   | Crear un nuevo recurso | Enviar datos para crear algo.        | axios.post(url, data).then(res => ...)      |
+| PUT    | Actualizar un recurso  | Modificar totalmente un recurso.     | axios.put(url, data).then(res => ...)       |
+| PATCH  | Actualizar parcialmente| Cambiar solo una parte del recurso.  | axios.patch(url, data).then(res => ...)     |
+| DELETE | Eliminar un recurso    | Borrar un recurso del servidor.      | axios.delete(url).then(res => ...)          |
+*/
+<!-- ================================
+     🌐 EJERCICIO: ENVÍO DE DATOS CON AXIOS Y FORM DATA (RESUMEN)
+     ================================ -->
+
+<!-- 1. Estructura HTML mínima para el formulario -->
+<form id="formularioDatos">
+  <input type="text" id="nombre"   placeholder="Nombre" />
+  <input type="text" id="apellido" placeholder="Apellidos" />
+  <input type="text" id="edad"     placeholder="Edad" />
+  <input type="text" id="hobbie"   placeholder="Hobbie" />
+  <button type="button" id="btnEnviar">Enviar</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  // 2. Obtener referencias a inputs y botón
+  const inputNombre   = document.getElementById("nombre");
+  const inputApellido = document.getElementById("apellido");
+  const inputEdad     = document.getElementById("edad");
+  const inputHobbie   = document.getElementById("hobbie");
+  const btnEnviar     = document.getElementById("btnEnviar");
+
+  // 3. Al hacer clic en "Enviar", capturamos valores y enviamos con Axios
+  btnEnviar.addEventListener("click", function enviarDatos() {
+    // Obtener valores de cada campo
+    const nombreVal   = inputNombre.value;
+    const apellidoVal = inputApellido.value;
+    const edadVal     = inputEdad.value;
+    const hobbieVal   = inputHobbie.value;
+
+    // 4. Crear FormData y añadir pares clave/valor
+    const formData = new FormData();
+    formData.append("nombre",   nombreVal);
+    formData.append("apellidos",apellidoVal);
+    formData.append("edad",     edadVal);
+    formData.append("hobbies",  hobbieVal);
+
+    // 5. Enviar petición POST con Axios
+    axios.post("http://54.147.27.132:8888/index.php", formData)
+      .then(response => {
+        console.log("Respuesta del servidor:", response.data);
+      })
+      .catch(error => {
+        console.error("Error en la petición POST:", error);
+      });
+  });
+</script>
+
+    // -----------------------------------------
+    // 🌍 EJERCICIO COMPLETO: Buscar país y mostrar info
+    // -----------------------------------------
+
+    // Sintaxis:
+    // - .get() para pedir los datos
+    // - .createElement() para crear nodos
+    // - .textContent / .src / .alt / .width para añadir contenido o atributos
+    // - .appendChild() para insertar en el DOM
+    // - .toLowerCase() para comparar texto sin importar mayúsculas
+
+    window.onload = function () {
+      document.getElementById("buscar").addEventListener("click", buscar);
+      let lista = document.getElementById("info");
+
+      function buscar() {
+        lista.innerHTML = ""; // Limpiar resultados anteriores
+        let paisInput = document.getElementById("pais").value.trim().toLowerCase();
+
+        axios.get("https://restcountries.com/v3.1/all")
+          .then(response => {
+            let paises = response.data;
+            let encontrado = false;
+
+            for (let i = 0; i < paises.length; i++) {
+              let nombre = paises[i].name.common;
+
+              if (nombre.toLowerCase() === paisInput) {
+                encontrado = true;
+
+                // Nombre del país
+                let li1 = document.createElement("li");
+                li1.textContent = "Nombre: " + nombre;
+                lista.appendChild(li1);
+
+                // Capital(es)
+                let capitales = paises[i].capital || ["Desconocida"];
+                for (let j = 0; j < capitales.length; j++) {
+                  let li2 = document.createElement("li");
+                  li2.textContent = "Capital: " + capitales[j];
+                  lista.appendChild(li2);
+                }
+
+                // Bandera
+                let img = document.createElement("img");
+                img.src = paises[i].flags.png; // URL de la imagen
+                img.alt = "Bandera de " + nombre; // Texto alternativo
+                img.width = 150; // Ancho en píxeles
+                lista.appendChild(img);
+
+                break; // Terminar el bucle si lo encuentra
+              }
+            }
+
+            if (!encontrado) {
+              let li = document.createElement("li");
+              li.textContent = "País no encontrado.";
+              lista.appendChild(li);
+            }
+          })
+          .catch(error => {
+            console.error("Error al obtener datos:", error);
+          });
+      }
+    };
+
+
+  </script>
+</body>
+</html>
